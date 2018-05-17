@@ -1,11 +1,9 @@
 ## DustBuster
-##### v1.1.7
-by [zanuka](https://github.com/zanuka)
-
-![DustBuster](images/dust-buster-syntax.png?raw=true "DustBuster")
 
 ***
-DustBuster is an enhanced syntax definition for .dust files that includes sublime completions of dustjs-helpers and dustjs logic syntax.
+DustBuster is an enhanced syntax definition for .dust files that includes Sublime Text completions of dustjs-helpers and dustjs logic syntax. If you prefer Atom, checkout the [language-dustjs](https://atom.io/packages/language-dustjs) package.
+
+![DustBuster](images/dust-buster-syntax.png?raw=true "DustBuster")
 
 ### Features
 - syntax definition for .dust files (with html support)
@@ -82,6 +80,15 @@ DustBuster is an enhanced syntax definition for .dust files that includes sublim
 #### `deq|dust-equals`
 ```
     {@eq value="bar"} {/eq}
+```
+
+#### `deqe|dust-equals-else`
+```
+    {@eq key="10" value="price"} 
+        Your price is 10
+    {:else}
+        Your price is not 10
+    {/eq}
 ```
 
 #### `dne|dust-not-equals`
@@ -196,7 +203,7 @@ DustBuster is an enhanced syntax definition for .dust files that includes sublim
 
 #### `ddump|dust-context-dump`
 ```
-    {@contextDump/}
+    {@contextDump key="current|full" to="output|console" /}
 ```
 
 #### `dsep|dust-separator`
@@ -238,8 +245,6 @@ DustBuster is an enhanced syntax definition for .dust files that includes sublim
 ```
     {name|jp}
 ```
-
-
 
 ###### Additional Credits
 DustBuster is a complete rewrite of a previous package by [sntran](https://github.com/sntran) and [gpbl](https://github.com/gpbl).

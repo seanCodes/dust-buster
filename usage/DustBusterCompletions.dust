@@ -18,16 +18,22 @@
 {! dpi|dust-partial-inline !}
 {<inline-partial-name}
 {/inline-partial-name}
-  
+
 {! dpp|dust-partial-params !}
 {>"path/to/partial" params/}
 
 {! dpd|dust-partial-dynamic !}
 {>"path/to/partial{dynamic-param}"/}
 
-
-{! de|dust-equals !}
+{! deq|dust-equals !}
 {@eq value="bar"}{/eq}
+
+{! deqe|dust-equals-else !}
+{@eq key="10" value="price"}
+  Your price is 10
+{:else}
+  Your price is not 10
+{/eq}
 
 {! dne|dust-not-equals !}
 {@ne key="foo" value="foo"}{/ne}
@@ -74,13 +80,13 @@
 {! dmeq|dust-math-eq-filter !}
 {@math key="-XX" method="abs"}
   {@eq value=XX}
-    
+
   {/eq}
 {/math}
 
 {! dskt|dust-select-with-key-and-type !}
 {@select key="foo" type="string"}
-  
+
 {/select}
 
 {! dsmcd|dust-select-multi-condition-with-default !}
@@ -89,7 +95,7 @@
   {@eq value="baz"}baz{/eq}
   {@eq value="biz"}biz{/eq}
   {@default value="default"}default{/default}
-{/select} 
+{/select}
 
 {! dsia|dust-select-inside-array !}
 {#array}
@@ -104,7 +110,7 @@
 {@size key=XX/}
 
 {! ddump|dust-context-dump !}
-{@contextDump/}
+{@contextDump key="current|full" to="output|console" /}
 
 {! dsep|dust-separator !}
 {@sep}, {/sep}
@@ -136,7 +142,7 @@
     {@eq value=27}
       Test is true
     {/eq}
-  {/math}  
+  {/math}
 {/block} !}
 
 {! single line comments supported !}
@@ -144,3 +150,6 @@
 {@math key="27.5" method="multiply" operand="7" round="true"/}
 {! {@math key="27.5" method="multiply" operand="7" round="true"/} !}
 {@math key="27.5" method="multiply" operand="7" round="true"/}
+
+{! language support for custom element types like html tags with dashes !}
+<div annotation-xml></div>
